@@ -1,0 +1,242 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: Montserrat;
+    background-color: #FDFDFD0a;
+}
+
+/*--> HEADER SECTION <---*/
+
+.header-app{
+    width: 100%;
+    padding: 8px;
+    color: #333;
+    display: flex;
+    box-shadow: 0  0px 2px #0004;
+    z-index: 40;
+    justify-content: space-between;
+    container: logo-header / inline-size;
+    position: relative;
+}
+
+.header__nav-list{
+    flex-grow: 1;
+}
+
+.header__nav{
+    display: flex;
+    width: 100%;
+    padding: 8px 10px;
+    font-size: clamp(12px, 1.8vw, 18px);
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+}
+
+
+
+.header__nav ,.header__nav >li a{
+    list-style: none;
+    color: #333;
+    text-decoration: none;
+}
+.item__nav-choice{
+    /* background: #ededed; */
+    padding: 8px 10px;
+    letter-spacing: .6px;
+    cursor: pointer;
+    border-radius: 1.5px;
+    text-wrap: wrap;
+    text-align: center;
+    transition: all .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 100px;
+    flex-grow: 1;
+    max-width: fit-content;
+}
+
+.item__nav-choice:hover{
+    background-color: #F5F5F5;
+}
+
+.item__nav-choice:first-child{
+    border-bottom: 1.7px solid #303030;
+}
+
+.Log__button-section{
+    border: none;
+    background-color: #333;
+    padding: 8px 24px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px 0 #0004;
+    cursor: pointer;
+    opacity: .85;
+    scale: .9;
+    transition: all .3s ease;
+    flex-grow: 1;
+    max-width: 130px;
+    min-width: 90px;
+}
+
+.Log__button-section:not(:hover){
+    opacity: 1;
+    scale: 1;
+}
+
+
+.Log__button-section > a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: Montserrat;
+    font-weight: 400;
+    line-height: 16px;
+    font-size: clamp(12px, 1.8vw, 18px);;
+    letter-spacing: .6px;
+}
+
+
+.container__logo-header{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-grow: 1;
+    gap: 10px;
+    font-size: 22px;
+    padding: 4px 16px;
+    font-weight: 600;
+    position:absolute;
+    opacity: 0;
+    z-index: -10;
+    transition: all .5s ease allow-discrete;
+}
+.container__text-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text__logo-header{
+    text-shadow: 1px 2px 3px #3333;
+    padding-right: 9px;
+    border-right: 2px dotted #8A06D7;
+}
+
+.text__logo-header > span {
+    color: #8A06D7;
+    opacity: .7;
+}
+.logo__header{
+    width: 40px;
+    margin: 0;
+    object-fit: cover;
+}
+
+
+.icon__nav-header{
+    width: 18px;
+}
+/*--> Welcome section <--*/
+.container__text-welcome{
+    font-family: 'Rock Salt';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-wrap: balance;
+    width: clamp(220px, 85%, 500px);
+    height: 150px;
+    margin: 38px auto;
+    position: relative;
+    overflow: hidden;
+    transition: all .3s ease-in;
+    user-select: none;
+}
+
+.welcome__text{
+    line-height: 36px;
+    font-size: clamp(24px, 2.6vw, 28px);
+    text-align: center;
+    opacity: .7;
+    text-shadow: 1px 3px 3px  #0004;
+    z-index: 20;
+    overflow: hidden;
+    animation: 1s normal blinking ease;
+    transition: all .3s;
+}
+
+.blop__welcome-shape{
+    position: absolute;
+    width: clamp(380px, 70%, 410px);
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    margin: auto;
+    display: none;
+    opacity: 0;
+    transform: scale(.4);
+    transition: all .3s allow-discrete ease-in-out;
+}
+
+
+/*MEDIA QUERY HEADER DESK-TOP*/
+@container logo-header (width >=  700px) {
+    .container__logo-header{
+        position: relative;
+        display: flex;
+        opacity: 1;
+    }
+}
+
+@media (width >= 660px) {
+
+    /*--> HEADER SECTION <-- */
+    /*--> WELCOME-TEXT-SECTION <--*/
+    .container__text-welcome{
+        height: max-content;
+        position: relative;
+        height: 250px;
+        overflow: visible;
+        margin-top: 40px;
+    }
+    .blop__welcome-shape{
+        display: block;
+        top: 0;
+        right: 0;
+        opacity: 9;
+        transform: scale(1);
+        transition: all .3s ;
+
+        @starting-style {
+            transform:  scale(0);
+        }
+    }
+
+}
+
+
+/* --> ANIMATIONS SECTION <---*/
+
+/*HEADER*/
+
+
+/*TEXT-WELCOME*/
+@keyframes  blinking{
+    0%{
+        scale: .7;
+        opacity: .5;
+    }
+    100%{
+        scale: 1.02;
+        opacity: .7;     
+    }
+
+}
+
