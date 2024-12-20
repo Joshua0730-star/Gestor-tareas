@@ -11,23 +11,42 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rock+Salt&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Rock+Salt&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/styles/home-syles.css" />
+    <link rel="stylesheet" href="/styles/about-styles.css" />
   </head>
   <body>
     <header class="header-app">
       <div class="container__logo-header">
-        <img src="/images/logo-black-nav.png" alt="Logo" class="logo__header" />
+        <img
+          src="/images/header/logo-black-nav.png"
+          alt="Logo"
+          class="logo__header"
+        />
         <p class="text__logo-header"><span>This is</span> J-List</p>
       </div>
       <nav class="header__nav-list">
         <ul class="header__nav">
           <li class="item__nav-choice home__section">
-            <img src="/images/home.png" alt="" class="icon__nav-header">
+            <img
+              src="/images/header/home.png"
+              alt="icon-home-page"
+              class="icon__nav-header"
+            />
             <a href="#home-page">Home</a>
           </li>
           <li class="item__nav-choice About__section">
-            <img src="/images/info.png" alt="" class="icon__nav-header">
-            <a href="">About Us</a>
+            <img
+              src="/images/header/info.png"
+              alt="icon-about-us"
+              class="icon__nav-header"
+            />
+            <a href="#about-page">About Us</a>
           </li>
           <button class="Log__button-section">
             <a href="">Log In</a>
@@ -38,9 +57,120 @@
     <section class="section__home-page" id="home-page">
       <div class="container__text-welcome">
         <h2 class="welcome__text">Welcome, let´s do your first task</h2>
-        <img src="/images/blop-shape.svg" class="blop__welcome-shape" />
+        <img
+          src="/images/main-section/blop-shape.svg"
+          class="blop__welcome-shape"
+          alt="background-shape-title"
+        />
       </div>
     </section>
-    
+    <main class="container__main-app">
+      <section class="container__input-task">
+        <div class="form-container">
+          <form class="form">
+            <div class="form-group">
+              <label for="input__task-user">What´s your task?</label>
+              <input
+                type="text"
+                id="input__task-user"
+                name="input"
+                placeholder="Write Here..."
+                required=""
+              />
+            </div>
+            <button class="form-submit-btn" type="submit">Add Task</button>
+          </form>
+        </div>
+      </section>
+      <section class="container__list-task">
+        <div class="container__buttons-task">
+          <div class="custom-select" role="button">
+            <p class="select-button">Filter</p>
+            <img
+              src="/images/main-section/filter-icon.svg"
+              alt="filter-icon"
+              class="icon__filter"
+            />
+            <div class="options">
+              <div class="option" data-value="1">Recent</div>
+              <div class="option" data-value="2">Finished</div>
+              <div class="option" data-value="3">Incomplete</div>
+            </div>
+          </div>
+          <div class="container__button-delete" role="button">
+            <p>Delete All</p>
+            <img
+              src="/images/main-section/trash-icon.svg"
+              alt="icon-trash"
+              class="icon__trash-all"
+            />
+          </div>
+        </div>
+        <div class="container__task">
+          <article class="container__task-user">
+            <div class="container__icon-checked">
+              <span class="icon__checked"></span>
+            </div>
+            <div class="container__text-task">
+              <p class="text__task-user">Action</p>
+            </div>
+            <div class="container__icon-edit">
+              <img
+                src="/images/main-section/Edit.svg"
+                alt="edit-icon"
+                class="edit__icon"
+              />
+            </div>
+            <div class="container__icon-edit">
+              <img
+                src="/images/main-section/remove-icon.svg"
+                alt="remove-icon"
+                class="delete__icon"
+              />
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <section class="section__about-page" id="about-page">
+      <div class="container__about-content">
+        <div class="box__title-about">
+          <img
+            src="/images/info-icon.svg"
+            alt="info-image"
+            class="info__icon-about"
+          />
+          <h3 class="title-info">This is J-List</h3>
+        </div>
+        <div class="container__img-info">
+          <img src="/images/about/image-example.svg" alt="img-info" />
+        </div>
+        <div class="container__description-info">
+          <div class="content__description">
+            <h4 class="title__description">Title</h4>
+            <span>Sub-Title</span>
+            <p class="text__description-content">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed,
+              neque? Doloremque beatae culpa exercitationem quam autem fugiat
+              dolores molestiae in vel cum, suscipit praesentium ipsam
+              voluptatum veritatis qui iusto omnis?
+            </p>
+          </div>
+          <div class="container__picture-list">
+            <picture class="picture__img">
+              <source
+                srcset="/images/about/picture-list-bigger.png"
+                media="(min-width: 660px)"
+              />
+              <img
+                src="/images/about/picture-list.svg"
+                alt="picture list"
+                class="picture__list-item"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

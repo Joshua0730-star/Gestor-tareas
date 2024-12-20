@@ -1,0 +1,26 @@
+/* --> ABOUT US SECTION STYLES <--*/
+
+.section__about-page{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* min-height: 100dvh; */
+    width: clamp(270px, 100%, 800px);
+    margin: auto 100px;
+}
+
+.container__about-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box__title-about{
+    display: flex;
+    width: 75%;
+    gap: 18px;
+    align-self: center;
+    align-items: center;
+    font-family: "MuseoModerno";
+    font-style: italic;
+}
