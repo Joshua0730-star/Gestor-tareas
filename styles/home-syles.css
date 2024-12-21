@@ -3,7 +3,8 @@
     padding: 0;
     margin: 0;
 }
-:root{
+
+:root {
     scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: #2228 #ffffff;
@@ -16,7 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 28px;
 }
 
@@ -33,6 +34,9 @@ body {
     align-items: center;
     container: logo-header / inline-size;
     position: relative;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
 }
 
 .header__nav-list {
@@ -189,7 +193,7 @@ body {
     text-shadow: 1px 3px 3px #0006;
     z-index: 20;
     overflow: hidden;
-    animation: 1s normal blinking ease;
+    animation: 1s normal blinking ease both;
     transition: all .3s;
 }
 
@@ -217,6 +221,7 @@ body {
     align-items: center;
     /* border: 2px solid black; */
     width: clamp(270px, 90%, 1200px);
+    margin-bottom: 60px;
 }
 
 
@@ -332,7 +337,7 @@ body {
 
 /*--> LIST TO TO <---*/
 
-.container__list-task{
+.container__list-task {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -341,7 +346,7 @@ body {
 }
 
 
-.container__buttons-task{
+.container__buttons-task {
     display: flex;
     justify-content: space-evenly;
     padding: 26px 14px;
@@ -351,7 +356,7 @@ body {
 }
 
 /* contenedor de trash*/
-.container__button-delete{
+.container__button-delete {
     width: clamp(150px, 50%, 190px);
     flex-grow: 1;
     border: 1.2px solid #333;
@@ -441,7 +446,8 @@ body {
 .custom-select.active .options {
     display: block;
 }
-.icon__trash-all{
+
+.icon__trash-all {
     height: fit-content;
     width: clamp(20px, 2.0vw, 24px);
 }
@@ -455,14 +461,14 @@ body {
 
 /*---> list task user <--*/
 
-.container__task{
+.container__task {
     margin-top: 18px;
     display: flex;
     flex-direction: column;
     width: clamp(260px, 95%, 570px);
 }
 
-.container__task-user{
+.container__task-user {
     display: flex;
     align-items: center;
     gap: 14px;
@@ -474,26 +480,28 @@ body {
     transition: all .3s ease;
 }
 
-.container__task-user:hover{
+.container__task-user:hover {
     outline: 1px solid #3337;
 }
-.container__icon-checked{
+
+.container__icon-checked {
     display: flex;
     width: fit-content;
     transition: all .2s ease;
 }
 
-.container__icon-checked:hover{
+.container__icon-checked:hover {
     scale: 1.20;
 }
-.icon__checked{
+
+.icon__checked {
     background-color: #acacac;
     width: 22px;
     height: 22px;
     border-radius: 100%;
 }
 
-.container__text-task{
+.container__text-task {
     flex-grow: 1;
     padding-left: 10px;
     margin-left: -10px;
@@ -504,7 +512,7 @@ body {
 }
 
 
-.container__icon-edit{
+.container__icon-edit {
     padding: 2px;
     display: flex;
     align-items: center;
@@ -513,16 +521,19 @@ body {
     transition: all .2s ease;
 }
 
-.container__icon-edit:hover{
+.container__icon-edit:hover {
     scale: 1.09;
     opacity: .9;
 }
-.edit__icon{
+
+.edit__icon {
     width: 30px;
 }
-.delete__icon{
+
+.delete__icon {
     width: 30px;
 }
+
 /*MEDIA QUERY HEADER DESK-TOP*/
 @container logo-header (width >=700px) {
     .container__logo-header {
@@ -571,14 +582,16 @@ body {
 
 /*TEXT-WELCOME*/
 @keyframes blinking {
-    0% {
-        scale: .7;
-        opacity: .5;
-    }
 
+    0%,
     100% {
         scale: 1.02;
         opacity: .7;
+    }
+
+    50% {
+        scale: .7;
+        opacity: .5;
     }
 
 }
