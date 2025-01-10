@@ -4,24 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>J-list</title>
-    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rock+Salt&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Rock+Salt&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rock+Salt&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/styles/home-syles.css" />
     <link rel="stylesheet" href="/styles/about-styles.css" />
+    <link rel="stylesheet" href="/styles/log-in-styles.css" />
   </head>
   <body>
-    <header class="header-app">
+    <header class="header-app"  >
       <div class="container__logo-header">
         <img
           src="/images/header/logo-black-nav.png"
@@ -30,31 +23,33 @@
         />
         <p class="text__logo-header"><span>This is</span> J-List</p>
       </div>
-      <nav class="header__nav-list">
+      <nav class="header__nav-list" role="navigation">
         <ul class="header__nav">
-          <li class="item__nav-choice home__section">
+          <li class="item__nav-choice home__section" role="menuitem">
             <img
               src="/images/header/home.png"
               alt="icon-home-page"
               class="icon__nav-header"
+              role="img"
             />
-            <a href="#home-page">Home</a>
+            <a href="#home-page" role="link">Home</a>
           </li>
-          <li class="item__nav-choice About__section">
+          <li class="item__nav-choice About__section" role="menuitem">
             <img
               src="/images/header/info.png"
               alt="icon-about-us"
               class="icon__nav-header"
+              role="img"
             />
-            <a href="#about-page">About Us</a>
+            <a href="#about-page" role="link">About Us</a>
           </li>
-          <button class="Log__button-section">
+          <button class="Log__button-section" role="button">
             <a href="">Log In</a>
           </button>
         </ul>
       </nav>
     </header>
-    <section class="section__home-page" id="home-page">
+    <section class="section__home-page" id="home-page" >
       <div class="container__text-welcome">
         <h2 class="welcome__text">Welcome, let´s do your first task</h2>
         <img
@@ -63,20 +58,30 @@
           alt="background-shape-title"
         />
       </div>
+      <div class="container__arrow-down">
+        <a href="#section__main" class="link__arrow-down">
+          <img src="/images/main-section/arrow-down-section.svg" class="arrow__down-home" alt="arrow down picture">
+        </a>
+      </div>
     </section>
-    <main class="container__main-app">
+    <main class="container__main-app" id="section__main">
       <section class="container__input-task">
         <div class="form-container">
           <form class="form">
             <div class="form-group">
-              <label for="input__task-user">What´s your task?</label>
-              <input
+              <label for="input__task-user" class="label__text-input">What´s your task?</label>
+              <div class="container__input-space">
+                <label for="input__task-user" class="container__icon-newTask">
+                  <img src="/images/main-section/To do list.svg" class="icon__new-task" alt="icon add new task">
+                </label>
+                <input
                 type="text"
                 id="input__task-user"
                 name="input"
                 placeholder="Write Here..."
                 required=""
               />
+              </div>
             </div>
             <button class="form-submit-btn" type="submit">Add Task</button>
           </form>
@@ -100,30 +105,96 @@
           <div class="container__button-delete" role="button">
             <p>Delete All</p>
             <img
-              src="/images/main-section/trash-icon.svg"
+              src="/images/main-section/Trash.svg"
               alt="icon-trash"
               class="icon__trash-all"
             />
           </div>
         </div>
         <div class="container__task">
-          <article class="container__task-user">
+          <article class="container__task-user"> <!--Cada uno de los article serán los elementos creados por el usuario-->
             <div class="container__icon-checked">
-              <span class="icon__checked"></span>
+              <span class="icon__checked" role="checkbox"></span>
+            </div>
+            <div class="container__text-task">
+              <p class="text__task-user">Action</p>
+            </div>
+            <div class="container__icon-edit" role="button">
+              <img
+                src="/images/main-section/pencil.svg"
+                alt="edit-icon"
+                class="edit__icon"
+              />
+            </div>
+            <div class="container__icon-edit" role="button">
+              <img
+                src="/images/main-section/cross_remove.svg"
+                alt="remove-icon"
+                class="delete__icon"
+              />
+            </div>
+          </article>
+          <article class="container__task-user"> <!--Cada uno de los article serán los elementos creados por el usuario-->
+            <div class="container__icon-checked">
+              <span class="icon__checked" role="checkbox"></span>
+            </div>
+            <div class="container__text-task">
+              <p class="text__task-user">Action</p>
+            </div>
+            <div class="container__icon-edit" role="button">
+              <img
+                src="/images/main-section/pencil.svg"
+                alt="edit-icon"
+                class="edit__icon"
+              />
+            </div>
+            <div class="container__icon-edit" role="button">
+              <img
+                src="/images/main-section/cross_remove.svg"
+                alt="remove-icon"
+                class="delete__icon"
+              />
+            </div>
+          </article>
+          <article class="container__task-user"> <!--Cada uno de los article serán los elementos creados por el usuario-->
+            <div class="container__icon-checked">
+              <span class="icon__checked" role="checkbox"></span>
+            </div>
+            <div class="container__text-task">
+              <p class="text__task-user">Action</p>
+            </div>
+            <div class="container__icon-edit" role="button">
+              <img
+                src="/images/main-section/pencil.svg"
+                alt="edit-icon"
+                class="edit__icon"
+              />
+            </div>
+            <div class="container__icon-edit" role="button">
+              <img
+                src="/images/main-section/cross_remove.svg"
+                alt="remove-icon"
+                class="delete__icon"
+              />
+            </div>
+          </article>
+          <article class="container__task-user"> <!--Cada uno de los article serán los elementos creados por el usuario-->
+            <div class="container__icon-checked">
+              <span class="icon__checked" role="checkbox"></span>
             </div>
             <div class="container__text-task">
               <p class="text__task-user">Action</p>
             </div>
             <div class="container__icon-edit">
               <img
-                src="/images/main-section/Edit.svg"
+                src="/images/main-section/pencil.svg"
                 alt="edit-icon"
                 class="edit__icon"
               />
             </div>
             <div class="container__icon-edit">
               <img
-                src="/images/main-section/remove-icon.svg"
+                src="/images/main-section/cross_remove.svg"
                 alt="remove-icon"
                 class="delete__icon"
               />
@@ -141,11 +212,19 @@
             class="info__icon-about"
           />
           <div class="shape__nice-blop">
-            <img src="/images/about/arrow-yellow.svg" alt="yellow arrow" class="yellow-arrow">
+            <img
+              src="/images/about/Text-logo.svg"
+              alt="logo-j List"
+              class="logo__about-image"
+            />
           </div>
         </div>
         <div class="container__img-info">
-          <img src="/images/about/image-example.svg" alt="img-info" class="image__info-example" />
+          <img
+            src="/images/about/image-example.svg"
+            alt="img-info"
+            class="image__info-example"
+          />
         </div>
         <div class="container__description-info">
           <div class="content__description">
@@ -162,7 +241,7 @@
             <picture class="picture__img">
               <source
                 srcset="/images/about/picture-list-bigger.png"
-                media="(min-width: 660px)"
+                media="(min-width: 1060px)"
               />
               <img
                 src="/images/about/picture-list.svg"
@@ -173,6 +252,16 @@
           </div>
         </div>
       </div>
+      <div class="container__image-ray">
+        <img
+          src="/images/about/image-new_section.svg"
+          alt="image ilustration"
+          class="image__new-section"
+        />
+      </div>
     </section>
+    <section class="section__log-page"></section>
+
+    <script src="/app/index.js"></script>
   </body>
 </html>
