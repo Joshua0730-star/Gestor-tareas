@@ -1,66 +1,75 @@
 /* --> ABOUT US SECTION STYLES <--*/
 
-.section__about-page{
+.section__about-page {
+    /* border: 2px solid black; */
     padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center ;
-    /* min-height: 100dvh; */
-    width: clamp(270px, 100%, 1200px);
-    margin: auto 100px;
-}
-
-.container__about-content{
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%;
+    justify-content: flex-end;
+    /* min-height: 100dvh; */
+    width: clamp(270px, 100%, 900px);
+    margin: 120px 100px;
+}
+
+.container__about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
     gap: 14px;
 }
 
-.box__title-about{
+.box__title-about {
     display: flex;
-    gap: 34px;
-    align-self:baseline;
+    gap: 4px;
+    align-self: baseline;
     align-items: center;
     justify-content: space-between;
     font-family: "MuseoModerno";
     font-style: italic;
 }
 
-.shape__nice-blop{
+.shape__nice-blop {
     display: flex;
-    justify-content: center;
-}
-.yellow-arrow{
-    object-fit: cover;
-    object-position: center;
-    scale: 1;
-    filter:  blur(.8px)  drop-shadow(1px 2px 0px #FDCD35) brightness(.96);
-    width: 270px;
-    transition: all .2s ease-in-out;
-    cursor: pointer;
+    justify-content: start;
+    align-items: center;
+    margin: auto;
 }
 
+.logo__about-image {
+    width: clamp(220px, 110%, 680px);
+    scale: .9;
+    padding-right: 30px;
+    filter: drop-shadow(3px 3px 3px #3331);
+}
 
 
-.title-info{
+.title-info {
     font-size: clamp(24px, 2.2vw, 28px);
 }
 
-.container__img-info{
+.container__img-info {
     display: flex;
     justify-content: center;
     width: 100%;
 }
-.image__info-example{
-    border-radius: 8px;
-    flex-grow: 1;
-    object-fit: cover;
-    object-position: center;
+
+.info__icon-about {
+    width: clamp(32px, 15%, 270px);
+    padding-left: 8px;
 }
 
-.container__description-info{
+.image__info-example {
+    border-radius: 8px;
+    width: clamp(380px, 100%, 560px);
+    object-fit: cover;
+    object-position: center;
+    transition: all .3s allow-discrete ease;
+}
+
+.container__description-info {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -68,12 +77,14 @@
     padding: 10px;
 }
 
-.content__description .title__description{
+.content__description .title__description {
     font-weight: 500;
     line-height: 30px;
-    color: #222;;
+    color: #222;
+    ;
 }
-.content__description{
+
+.content__description {
     display: flex;
     flex-direction: column;
     align-items: baseline;
@@ -83,26 +94,74 @@
 .content__description .title__description {
     letter-spacing: .4px;
     line-height: 24px;
+    font-size: clamp(24px, 2.4vw, 28px);
 }
-.content__description > span{
-    margin-bottom: 20px;
 
+.content__description>span {
+    margin-bottom: 20px;
+    font-size: clamp(18px, 1.8vw, 22px);
 }
-.content__description .text__description-content{
+
+.content__description .text__description-content {
     line-height: 150%;
     text-wrap: pretty;
+    font-size: clamp(18px, 1.6vw, 20px);
 }
 
 
-.container__picture-list{
+.container__picture-list {
     user-select: none;
     background: transparent;
     backdrop-filter: blur(3px);
 }
 
+.image__new-section {
+    width: 410px;
+    margin-top: 40px;
+    display: none;
+}
 
 /* ---> MEDIA QUERYS PENDIENTES <---*/
 
+@media (width >=660px) {
+    .image__info-example {
+        transition: all .3s ease allow-discrete;
+        display: none;
+    }
 
+    .container__about-content {
+        padding: 26px 16px;
+        box-shadow: 0px 0px 1px #3333;
+        border-left: 2px dotted #3339;
+        border-right: 2px dotted #3339;
+        border-radius: 2px;
+    }
+
+    .container__picture-list {
+        padding: 12px;
+    }
+
+    .info__icon-about {
+        scale: .9;
+        margin-left: 18px;
+    }
+
+    .container__description-info {
+        flex-direction: row;
+        gap: 0px;
+    }
+    .box__title-about {
+        align-self: center;
+        gap: 10px;
+    }
+
+    .logo__about-image {
+        scale: .9;
+    }
+
+    .image__new-section {
+        display: flex;
+    }
+}
 
 /*--> ANIMACIONES PENDIENTES <---*/
