@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/styles/log-in-styles.css" />
   </head>
   <body>
-    <header class="header-app"  >
+    <header class="header-app">
       <div class="container__logo-header">
         <img
           src="/images/header/logo-black-nav.png"
@@ -44,12 +44,12 @@
             <a href="#about-page" role="link">About Us</a>
           </li>
           <button class="Log__button-section" role="button">
-            <a href="">Log In</a>
+            <a href="#log__page-section">Sign In</a>
           </button>
         </ul>
       </nav>
     </header>
-    <section class="section__home-page" id="home-page" >
+    <section class="section__home-page" id="home-page">
       <div class="container__text-welcome">
         <h2 class="welcome__text">Welcome, let´s do your first task</h2>
         <img
@@ -60,7 +60,11 @@
       </div>
       <div class="container__arrow-down">
         <a href="#section__main" class="link__arrow-down">
-          <img src="/images/main-section/arrow-down-section.svg" class="arrow__down-home" alt="arrow down picture">
+          <img
+            src="/images/main-section/arrow-down-section.svg"
+            class="arrow__down-home"
+            alt="arrow down picture"
+          />
         </a>
       </div>
     </section>
@@ -69,18 +73,24 @@
         <div class="form-container">
           <form class="form">
             <div class="form-group">
-              <label for="input__task-user" class="label__text-input">What´s your task?</label>
+              <label for="input__task-user" class="label__text-input"
+                >What´s your task?</label
+              >
               <div class="container__input-space">
                 <label for="input__task-user" class="container__icon-newTask">
-                  <img src="/images/main-section/To do list.svg" class="icon__new-task" alt="icon add new task">
+                  <img
+                    src="/images/main-section/To do list.svg"
+                    class="icon__new-task"
+                    alt="icon add new task"
+                  />
                 </label>
                 <input
-                type="text"
-                id="input__task-user"
-                name="input"
-                placeholder="Write Here..."
-                required=""
-              />
+                  type="text"
+                  id="input__task-user"
+                  name="input"
+                  placeholder="Write Here..."
+                  required=""
+                />
               </div>
             </div>
             <button class="form-submit-btn" type="submit">Add Task</button>
@@ -89,7 +99,7 @@
       </section>
       <section class="container__list-task">
         <div class="container__buttons-task">
-          <div class="custom-select" role="button">
+          <div class="custom-select" role="dialog">
             <p class="select-button">Filter</p>
             <img
               src="/images/main-section/filter-icon.svg"
@@ -112,7 +122,8 @@
           </div>
         </div>
         <div class="container__task">
-          <article class="container__task-user"> <!--Cada uno de los article serán los elementos creados por el usuario-->
+          <article class="container__task-user">
+            <!--Cada uno de los article serán los elementos creados por el usuario-->
             <div class="container__icon-checked">
               <span class="icon__checked" role="checkbox"></span>
             </div>
@@ -134,7 +145,8 @@
               />
             </div>
           </article>
-          <article class="container__task-user"> <!--Cada uno de los article serán los elementos creados por el usuario-->
+          <article class="container__task-user">
+            <!--Cada uno de los article serán los elementos creados por el usuario-->
             <div class="container__icon-checked">
               <span class="icon__checked" role="checkbox"></span>
             </div>
@@ -156,7 +168,8 @@
               />
             </div>
           </article>
-          <article class="container__task-user"> <!--Cada uno de los article serán los elementos creados por el usuario-->
+          <article class="container__task-user">
+            <!--Cada uno de los article serán los elementos creados por el usuario-->
             <div class="container__icon-checked">
               <span class="icon__checked" role="checkbox"></span>
             </div>
@@ -178,7 +191,8 @@
               />
             </div>
           </article>
-          <article class="container__task-user"> <!--Cada uno de los article serán los elementos creados por el usuario-->
+          <article class="container__task-user">
+            <!--Cada uno de los article serán los elementos creados por el usuario-->
             <div class="container__icon-checked">
               <span class="icon__checked" role="checkbox"></span>
             </div>
@@ -260,8 +274,52 @@
         />
       </div>
     </section>
-    <section class="section__log-page"></section>
+    <section class="section__log-page" id="log__page-section">
+      <form class="form__log">
+        <p class="form-title-log">Sign in to your account</p>
+        <div class="input__container-log">
+          <label for="input__email" class="label__input-log">Email</label>
+          <input
+            placeholder="Example@gmail.com"
+            type="email"
+            id="input__email"
+            class="input__email-log input__log-section"
+          />
+        </div>
+        <div class="input__container-log">
+          <label for="input__password" class="label__input-log">Password</label>
+          <input
+            placeholder="Your password"
+            type="password"
+            id="input__password"
+            class="input__password-log input__log-section"
+          />
+        </div>
+        <div class="container__text-log">
+          <label for="input__checkbox" class="capa__label-log">
+            <input
+              type="checkbox"
+              class="input__box-section"
+              id="input__checkbox"
+              role="checkbox"
+            />
+            <label for="input__checkbox" class="label__term-section">
+              <span class="text__log-section">Terminos y Condiciones</span>
+            </label>
+          </label>
+        </div>
+        <div class="input__container-submit">
+          <button class="submit__form-log" type="submit" role="button">Sign in</button>
+        </div>
+
+        <p class="signup-link">
+          No account?
+          <a href="">Sign up</a>
+        </p>
+      </form>
+    </section>
 
     <script src="/app/index.js"></script>
+    <!-- <script src="/app.js"></script> -->
   </body>
 </html>
