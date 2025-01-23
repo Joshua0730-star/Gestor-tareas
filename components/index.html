@@ -26,22 +26,26 @@
       <nav class="header__nav-list" role="navigation">
         <ul class="header__nav">
           <li class="item__nav-choice home__section" role="menuitem">
-            <img
-              src="/images/header/home.png"
-              alt="icon-home-page"
-              class="icon__nav-header"
-              role="img"
-            />
-            <a href="#home-page" role="link">Home</a>
+            <a href="#home-page">
+              <img
+                src="/images/header/home.png"
+                alt="icon-home-page"
+                class="icon__nav-header"
+                role="img"
+              />
+              <a class="nav__link" href="#home-page" role="link">Home</a>
+            </a>
           </li>
           <li class="item__nav-choice About__section" role="menuitem">
-            <img
-              src="/images/header/info.png"
-              alt="icon-about-us"
-              class="icon__nav-header"
-              role="img"
-            />
-            <a href="#about-page" role="link">About Us</a>
+            <a href="#about-page">
+              <img
+                src="/images/header/info.png"
+                alt="icon-about-us"
+                class="icon__nav-header"
+                role="img"
+              />
+              <a class="nav__link" href="#about-page" role="link">About Us</a>
+            </a>
           </li>
           <button class="Log__button-section" role="button">
             <a href="#log__page-section">Sign In</a>
@@ -49,7 +53,8 @@
         </ul>
       </nav>
     </header>
-    <section class="section__home-page" id="home-page">
+
+    <section class="section__home-page section-page" id="home-page">
       <div class="container__text-welcome">
         <h2 class="welcome__text">Welcome, let´s do your first task</h2>
         <img
@@ -68,6 +73,7 @@
         </a>
       </div>
     </section>
+
     <main class="container__main-app" id="section__main">
       <section class="container__input-task">
         <div class="form-container">
@@ -85,6 +91,7 @@
                   />
                 </label>
                 <input
+                  autocomplete="off"
                   type="text"
                   id="input__task-user"
                   name="input"
@@ -121,103 +128,10 @@
             />
           </div>
         </div>
-        <div class="container__task">
-          <article class="container__task-user">
-            <!--Cada uno de los article serán los elementos creados por el usuario-->
-            <div class="container__icon-checked">
-              <span class="icon__checked" role="checkbox"></span>
-            </div>
-            <div class="container__text-task">
-              <p class="text__task-user">Action</p>
-            </div>
-            <div class="container__icon-edit" role="button">
-              <img
-                src="/images/main-section/pencil.svg"
-                alt="edit-icon"
-                class="edit__icon"
-              />
-            </div>
-            <div class="container__icon-edit" role="button">
-              <img
-                src="/images/main-section/cross_remove.svg"
-                alt="remove-icon"
-                class="delete__icon"
-              />
-            </div>
-          </article>
-          <article class="container__task-user">
-            <!--Cada uno de los article serán los elementos creados por el usuario-->
-            <div class="container__icon-checked">
-              <span class="icon__checked" role="checkbox"></span>
-            </div>
-            <div class="container__text-task">
-              <p class="text__task-user">Action</p>
-            </div>
-            <div class="container__icon-edit" role="button">
-              <img
-                src="/images/main-section/pencil.svg"
-                alt="edit-icon"
-                class="edit__icon"
-              />
-            </div>
-            <div class="container__icon-edit" role="button">
-              <img
-                src="/images/main-section/cross_remove.svg"
-                alt="remove-icon"
-                class="delete__icon"
-              />
-            </div>
-          </article>
-          <article class="container__task-user">
-            <!--Cada uno de los article serán los elementos creados por el usuario-->
-            <div class="container__icon-checked">
-              <span class="icon__checked" role="checkbox"></span>
-            </div>
-            <div class="container__text-task">
-              <p class="text__task-user">Action</p>
-            </div>
-            <div class="container__icon-edit" role="button">
-              <img
-                src="/images/main-section/pencil.svg"
-                alt="edit-icon"
-                class="edit__icon"
-              />
-            </div>
-            <div class="container__icon-edit" role="button">
-              <img
-                src="/images/main-section/cross_remove.svg"
-                alt="remove-icon"
-                class="delete__icon"
-              />
-            </div>
-          </article>
-          <article class="container__task-user">
-            <!--Cada uno de los article serán los elementos creados por el usuario-->
-            <div class="container__icon-checked">
-              <span class="icon__checked" role="checkbox"></span>
-            </div>
-            <div class="container__text-task">
-              <p class="text__task-user">Action</p>
-            </div>
-            <div class="container__icon-edit">
-              <img
-                src="/images/main-section/pencil.svg"
-                alt="edit-icon"
-                class="edit__icon"
-              />
-            </div>
-            <div class="container__icon-edit">
-              <img
-                src="/images/main-section/cross_remove.svg"
-                alt="remove-icon"
-                class="delete__icon"
-              />
-            </div>
-          </article>
-        </div>
+        <div class="container__task"></div>
       </section>
     </main>
-    <section class="section__about-page" id="about-page">
+    <section class="section__about-page section-page" id="about-page">
       <div class="container__about-content">
         <div class="box__title-about">
           <img
@@ -309,7 +223,9 @@
           </label>
         </div>
         <div class="input__container-submit">
-          <button class="submit__form-log" type="submit" role="button">Sign in</button>
+          <button class="submit__form-log" type="submit" role="button">
+            Sign in
+          </button>
         </div>
 
         <p class="signup-link">
@@ -320,6 +236,8 @@
     </section>
 
     <script src="/app/index.js"></script>
+    <script src="/app/header.js"></script>
+    <script src="/app/main-task.js"></script>
     <!-- <script src="/app.js"></script> -->
   </body>
 </html>

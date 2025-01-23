@@ -1,7 +1,6 @@
 /* --> ABOUT US SECTION STYLES <--*/
 
 .section__about-page {
-    /* border: 2px solid black; */
     padding: 10px;
     min-height: 100dvh;
     display: flex;
@@ -10,10 +9,17 @@
     justify-content: flex-end;
     /* min-height: 100dvh; */
     width: clamp(270px, 100%, 900px);
-    margin: 120px 100px;
+    margin: 320px 100px;
 }
 
 .container__about-content {
+    /* view-timeline-name: --info;
+    view-timeline-axis: block;
+    animation-timeline: --info;
+    animation-name: showing ;
+    animation-range: contain -35% cover 40%;
+    animation-fill-mode: both;
+    animation-timing-function: ease; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -165,3 +171,17 @@
 }
 
 /*--> ANIMACIONES PENDIENTES <---*/
+
+
+
+@keyframes showing {
+    from {
+        opacity: 0;
+        scale: .2;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
