@@ -129,6 +129,9 @@ const inputTask = document.querySelector('#input__task-user');
 const containerTask = document.querySelector('.container__task');
 let taskId = 0; // Identificador unico para cada tarea
 
+
+const list = [];
+
 // Escucha del botón para agregar tareas
 addTaskButton.addEventListener('click', (e) => {
     e.preventDefault();
@@ -136,9 +139,14 @@ addTaskButton.addEventListener('click', (e) => {
 
     if (dataInput) {
         addTask(dataInput, taskId);
+        list.push({
+            text: dataInput,
+            id: taskId,
+        })
         inputTask.value = ''; // Limpia el campo de entrada
         taskId += 1;
         removeAlert(); // Remueve cualquier alerta previa
+        console.log(list);
     } else {
         showAlert('Ingresa algo válido ❌');
     }
@@ -157,11 +165,13 @@ function addTask(taskText, id) {
             <div class="container__icon-edit" role="button">
                 <img src="/images/main-section/pencil.svg" alt="edit-icon" class="edit__icon" data-action="edit" />
             </div>
-            <div class="container__icon-edit" role="button">
+            <div class="container__icon-delete" role="button">
                 <img src="/images/main-section/cross_remove.svg" alt="remove-icon" class="delete__icon" data-action="delete" />
             </div>
         </article>`;
     containerTask.insertAdjacentHTML('afterbegin', taskHTML);
+
+    showNoti('¡Tarea agregada!', 'añadir');
 }
 
 // Manejo de eventos en el contenedor de tareas
@@ -194,10 +204,10 @@ function toggleTaskComplete(taskElement) {
     const parent = taskElement;
     const icon = parent.querySelector('.icon__checked');
     const text = parent.querySelector('.text__task-user');
-    
+
     icon.classList.toggle('checked');
     text.classList.toggle('made');
-    
+
     parent.classList.add('remove');
 
     setTimeout(() => {
@@ -208,7 +218,12 @@ function toggleTaskComplete(taskElement) {
 
 // Función para eliminar una tarea
 function deleteTask(taskElement) {
-    containerTask.removeChild(taskElement);
+    try {
+        containerTask.removeChild(taskElement);
+
+    } catch (err) {
+        console.log('Ocurrió un error!', err);
+    }
 }
 
 // Función para editar una tarea
@@ -222,22 +237,22 @@ function editTask(taskElement) {
 
     textElement.setAttribute('contenteditable', 'true');
     textElement.focus();
-    
+
     const newValue = textElement.textContent.trim();
     // Guardar cambios al salir del input editable o presionar Enter
     textElement.addEventListener('blur', () => {
-        if(newValue) {
+        if (newValue) {
             parentText.classList.remove('edit');
             textElement.removeAttribute('contenteditable');
             // textElement.blur();
         } else {
-                showAlert('El texto no puede estar vacío');
-                textElement.focus();
+            showAlert('El texto no puede estar vacío');
+            textElement.focus();
         }
     });
     textElement.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
-            if(newValue) {
+            if (newValue) {
                 parentText.classList.remove('edit');
                 textElement.removeAttribute('contenteditable');
 
@@ -267,9 +282,37 @@ function removeAlert() {
     const existingAlert = document.querySelector('.alertText');
     if (existingAlert) {
         existingAlert.remove();
-    } 
+    }
 }
 
 
+
+
+function showNoti(message, type){
+    const element = document.querySelector('.notify-mes');
+    const textNoty = element.querySelector('.notify__mes-text');
+    
+    element.clientTop = '200px'
+    const EMOGIS = {
+        'añadir': '✅',
+        'eliminar': '✔️'
+    }
+    textNoty.innerHTML = EMOGIS[type] + message;
+
+
+    element.classList.add('running');
+    element.style.transform = 'scale(1)';
+    resetNoty(element);
+}
+
+
+
+function resetNoty(alert){
+    setTimeout(() => {
+        alert.style.transform = 'scale(0)';
+        alert.classList.remove('running')
+        
+    }, 1500)
+}
 
 
